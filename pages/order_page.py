@@ -80,9 +80,9 @@ class OrderPage(BasePage):
         self.click_button(OrderPageLocators.yes_button)
 
     @allure.step('''Заполнение формы "Для кого самокат", "Про аренду" и подтверждение заказа''')
-    def fill_out_the_form_order_scooter(self, user, text):
+    def fill_out_the_form_order_scooter(self, user):
         self.complete_filling_of_the_who_is_scooter_form(user)
-        self.complete_filling_of_the_about_rent_form(text)
+        self.complete_filling_of_the_about_rent_form(user)
         self.click_button_yes()
 
     @allure.step('Проверка отображения окна с текстом подтверждения заказа')

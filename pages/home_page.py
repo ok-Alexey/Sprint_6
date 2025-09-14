@@ -64,6 +64,7 @@ class HomePage(BasePage):
     @allure.step('Получение текста вопроса')
     def get_text_question(self, question_button_locator, question_text_locator):
         self.click_question_button(question_button_locator)
+        self.find_and_wait_locator(question_text_locator)
         text_question = self.get_text_locator(question_text_locator)
         return text_question
     
