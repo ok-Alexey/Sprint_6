@@ -1,7 +1,7 @@
 import time
 import allure
 import pytest
-
+import time
 from data_tests.data import Questions, Urls
 from locators.locators_for_home_page import HomePageLocators
 from pages.home_page import HomePage, HomePageHeader
@@ -41,9 +41,9 @@ class TestMainPage:
                         3) Получаем текст ответа на выбранный вопрос;
                         4) Сравниваем полученный текст с ожидаемым''')
     @pytest.mark.parametrize('question_locator, question_text_locator, expected_question_text', zip(HomePageLocators.questions, HomePageLocators.questions_text, Questions.expected_question_text))
-    def test_accordeon(self, driver, question_locator, question_text_locator, expected_question_text):
+    def test_compliance(self, driver, question_locator, question_text_locator, expected_question_text):
         home_page = HomePage(driver)
         text = home_page.get_text_question(question_locator, question_text_locator)
-
+        time.sleep(5)
         assert text == expected_question_text
         

@@ -13,8 +13,7 @@ class BasePage:
     # Ожидание отображения локатора
     def find_and_wait_locator(self, locator):
         return WebDriverWait(self.driver, 10).until(
-            EC.visibility_of_element_located(locator)
-            )
+            EC.visibility_of_element_located(locator))
 
     # Клик по кнопке
     def click_button(self, locator):
@@ -26,6 +25,7 @@ class BasePage:
 
     # Получить текст элемента
     def get_text_locator(self, locator):
+
         return self.find_and_wait_locator(locator).text
 
     # Скролл к нужному элементу
